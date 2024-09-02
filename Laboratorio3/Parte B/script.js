@@ -1,6 +1,7 @@
 let contador = 1;
 let cambio = false;
-function agregarElemento() {
+
+function agregar() {
     const lista = document.getElementById('lista');
     const nuevoElemento = document.createElement('li');
     nuevoElemento.textContent = `Elemento ${contador}`;
@@ -8,7 +9,7 @@ function agregarElemento() {
     contador++;
 }
 
-function eliminarElemento() {
+function borrar() {
     const lista = document.getElementById('lista');
     if (lista.lastChild) {
         lista.removeChild(lista.lastChild);
@@ -16,12 +17,15 @@ function eliminarElemento() {
     }
 }
 
-function cambiarColorFondo() {
+function cambiarFondo() {
     const body = document.body;
+    const list = document.getElementById('lista');
     if (cambio) {
         body.style.backgroundColor = 'white';
+        list.style.color = 'black';
     } else {
-        body.style.backgroundColor = 'darkslategrey'; // Cambia este color a tu preferencia
+        body.style.backgroundColor = 'darkslategrey';
+        list.style.color = 'white';
     }
     cambio = !cambio;
 }
